@@ -24,11 +24,14 @@
             time: position,
             location: initialLocation += 6
 
+
         };
+
+        console.log(handPositioning[position]);
 
         //console.log(handPositioning.time, handPositioning.location);
         //console.log(handPositioning[0]);
-        console.log(handPositioning[0]);
+
     }
 
 
@@ -40,12 +43,28 @@
         var minutes = currentDate.getMinutes();
         var hours = currentDate.getHours();
 
+
+        if (hours > 12 ) {
+            hours = hours -12;
+        }
+
+        hours = hours * 5;
+
+        //var hours = (23 - 12) * 5;
+
+
+        console.log(hours + "hours");
+        //var hourMultiplier = hours * 30;
+
         handPosition(seconds, minutes, hours);
 
     }
 
 
     function handPosition(seconds, minutes, hours) {
+
+        //hours = hours * 5;
+        //console.log(hours);
 
         var secondHand = document.querySelectorAll(".second-hand");
         var minuteHand = document.querySelectorAll(".minute-hand");
